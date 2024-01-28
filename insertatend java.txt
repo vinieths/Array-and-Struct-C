@@ -1,0 +1,72 @@
+class Node2
+{
+    int data;
+    Node2 next;
+    Node2(int d)
+    {
+        this.data=d;
+        this.next=null;
+    }
+}
+
+class LL
+{   
+    Node2 head;
+    Node2 tail;
+    LL()
+    {
+        this.head=null;
+        this.tail=null;
+    }
+    public void insert(int d)
+    {
+        Node2 n = new Node2(d);
+        
+        if(head==null)
+        {
+            head=n;
+            tail=n;
+        }
+        else{
+            n.next=head;
+            head=n;
+        }
+    }
+     public void insertatend(int d)
+    {
+        Node2 n = new Node2(d);
+        
+        if(head==null)
+        {
+            head=n;
+            tail=n;
+        }
+        else{
+            tail.next=n;
+            tail=n;
+        }
+    }
+    public void display()
+    {
+        Node2 temp=head;
+        while(temp!=null)
+        {
+            System.out.print(temp.data+"-->");
+            System.out.print(temp.next+"-->");
+            temp=temp.next;
+        }
+        //System.out.println("Null");
+    }
+}
+public class Listinsend{
+    public static void main(String args [])
+    {
+        LL l = new LL();
+        l.insertatend(67);
+        l.insertatend(77);
+        l.insertatend(87);
+        l.insertatend(97);
+        l.display();
+    }
+    
+}
